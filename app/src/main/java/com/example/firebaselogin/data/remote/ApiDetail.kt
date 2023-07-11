@@ -12,19 +12,5 @@ object ApiDetail {
 //    const val ROOM_URL="https://61e947967bc0550017bc61bf.mockapi.io/api/"
     const val ROOM_URL="v1/rooms"
 
-    //rooms api
 
-    val okHttpClient=OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().apply {
-            level= HttpLoggingInterceptor.Level.BODY
-        })
-        .build()
-
-    val retrofitinstance = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .client(okHttpClient)
-        .build()
-
-    val apiClient = retrofitinstance.create(ApiCall::class.java)
 }

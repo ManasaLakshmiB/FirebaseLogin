@@ -5,21 +5,38 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+
+
+
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.firebaselogin.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="com.example.firebaselogin.ui.People.PeopleFragment"
+        android:label="@string/title_people"
+        tools:layout="@layout/fragment_room" >
+<!--        <action-->
+<!--            android:id="@+id/navigation_home_to_peopledetailFragment"-->
+<!--            app:destination="@+id/peopledetailfragment"/>-->
 
+        <action
+            android:id="@+id/action_navigation_home_to_peopledetailfragment"
+            app:destination="@id/peopledetailfragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_peopledetailfragment2"
+            app:destination="@id/peopledetailfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/peopledetailfragment"
+        android:name="com.example.firebaselogin.ui.People.PeopleDetailFragment"
+        android:label="@string/title_signout"
+        tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.firebaselogin.ui.people.peopleFragment"
-        android:label="@string/title_dashboard"
+        android:name="com.example.firebaselogin.ui.Room.RoomFragment"
+        android:label="@string/title_Room"
         tools:layout="@layout/fragment_people" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.firebaselogin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+
+
+
 </navigation>
